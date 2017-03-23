@@ -59,8 +59,10 @@ public class FindSessionDeclarationVisitor extends BaseTreeVisitor {
 		if (isMethodInvocation(tree)) {
 			MethodInvocationTree methodInvocation = (MethodInvocationTree) tree.expression();
 			if (isManuallyCreatedSession(methodInvocation)) {
-				IdentifierTree variable = (IdentifierTree) tree.variable();
-				sessions.add((VariableTree) getDeclaration(variable));
+				if (tree.variable() instanceof IdentifierTree) {
+					IdentifierTree variable = (IdentifierTree) tree.variable();
+					sessions.add((VariableTree) getDeclaration(variable));
+				}
 			} else if (isSession(methodInvocation) && methodInvocation.methodSelect().is(Kind.IDENTIFIER)) {
 				findSessionsCreatedInMethods(tree, methodInvocation);
 			}
