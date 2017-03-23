@@ -67,8 +67,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.version>6.3</sonar.version>
-        <sonar.java.plugin>4.6.0.8784</sonar.java.plugin>
+        <sonar.version>6.2</sonar.version>
+        <sonar.java.plugin>4.5.0.8398</sonar.java.plugin>
         <coveralls.repo.token>4rVf3NGV0jyQ3EGrc8L86oEDoHWm6MgDD</coveralls.repo.token>
         <tagName>v${project.version}</tagName>
     </properties>
